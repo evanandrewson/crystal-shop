@@ -1,1 +1,1 @@
-import './render-crystal.test.js/index.js';
+import './render-crystal.test.js';
