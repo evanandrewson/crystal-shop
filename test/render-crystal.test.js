@@ -2,6 +2,8 @@ import renderCrystal from '../src/render-crystal.js';
 
 const test = QUnit.test;
 
+QUnit.module('renderCrystal');
+
 test('renders a crystal', function(assert) {
     //Arrange
     // Set up your parameters and expectations
