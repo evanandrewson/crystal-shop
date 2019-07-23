@@ -1,4 +1,4 @@
-import renderCrystals from '../src/render-crystals.js';
+import renderCrystal from '../src/render-crystal.js';
 
 const test = QUnit.test;
 
@@ -8,17 +8,18 @@ test('renders a crystal', function(assert) {
     const amethyst = {
         code: 'amethyst',
         name: 'Amethyst',
-        image: 'assets/amethyst.jpg',
+        image: '../assets/amethyst.jpg',
         description: 'purple and amazing',
         category: 'quartz',
         price: 5.00,
         cost: 3.00
     };
-    const expected = '<li><h3>Amethyst</h3><img src="assets/amethyst.jpg" alt="amethyst image"><p>$10.00</p><button value="amethyst">Add</button></li>';
+    const expected = '<li class="quartz" title="purple and amazing"><h3>Amethyst</h3><img src="../assets/amethyst.jpg" alt="Amethyst image"><p class="price">$5.00</p><button value="amethyst">Add</button></li>';
 
     //Act 
     // Call the function you're testing and set the result to a const
-    const result = renderCrystals(amethyst);
+    const result = renderCrystal(amethyst).outerHTML;
+
 
     //Assert
     assert.equal(result, expected);
