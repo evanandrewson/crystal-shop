@@ -61,7 +61,7 @@ const roseQuartz = {
 const smokyQuartz = {
     code: 'smokyQuartz',
     name: 'Smoky quartz',
-    image: 'assets/smoky-quartz',
+    image: 'assets/smoky-quartz.jpg',
     description: 'grayish black',
     category: 'quartz',
     price: 4.00,
