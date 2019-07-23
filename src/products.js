@@ -14,17 +14,47 @@ const metamorphicButton = document.getElementById('metamorphic-button');
 const mineralButton = document.getElementById('mineral-button');
 const showAllButton = document.getElementById('show-all-button');
 
+const quartzNodeList = document.querySelectorAll('li.quartz');
+const feldsparNodeList = document.querySelectorAll('li.feldspar');
+const metamorphicNodeList = document.querySelectorAll('li.metamorphic');
+const mineralNodeList = document.querySelectorAll('li.mineral');
+const crystalNodeList = document.querySelectorAll('li');
+
 quartzButton.addEventListener('click', () => {
-    const quartzList = document.querySelectorAll('li.quartz');
     hideCrystals();
-    console.log(quartzList);
-    for(let i = 0; i < quartzList.length; i++) {
-        quartzList[i].classList.remove('hidden');
+    for(let i = 0; i < quartzNodeList.length; i++) {
+        quartzNodeList[i].classList.remove('hidden');
+    }
+});
+
+feldsparButton.addEventListener('click', () => {
+    hideCrystals();
+    for(let i = 0; i < feldsparNodeList.length; i++) {
+        feldsparNodeList[i].classList.remove('hidden');
+    }
+});
+
+metamorphicButton.addEventListener('click', () => {
+    hideCrystals();
+    for(let i = 0; i < metamorphicNodeList.length; i++) {
+        metamorphicNodeList[i].classList.remove('hidden');
+    }
+});
+
+mineralButton.addEventListener('click', () => {
+    hideCrystals();
+    for(let i = 0; i < mineralNodeList.length; i++) {
+        mineralNodeList[i].classList.remove('hidden');
+    }
+});
+
+showAllButton.addEventListener('click', () => {
+    for(let i = 0; i < crystalNodeList.length; i++) {
+        crystalNodeList[i].classList.remove('hidden');
     }
 });
 
 function hideCrystals() {
-    const crystalNodeList = document.querySelectorAll('li');
     for(let i = 0; i < crystalNodeList.length; i++) {
         crystalNodeList[i].className = 'hidden';
     }
