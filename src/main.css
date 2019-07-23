@@ -1,0 +1,17 @@
+/* color palette courtesy of coolors.co
+4E5340, 697268, 95A3A4, B7D1DA, E2E8DD */
+
+body {
+    font-family: 'Dancing Script', cursive;
+    background-color: #4E5340;
+}
+
+header {
+    text-align: center;
+    background-color: #697268;
+    padding: 1rem;
+}
+
+h1 {
+    font-size: 3rem;
+}

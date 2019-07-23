@@ -1,0 +1,25 @@
+#crystals {
+    list-style: none;
+    display: flex;
+}
+
+#crystals li {
+    height: 250px;
+    width: 125px;
+    border: 2px double black;
+    text-align: center;
+    margin: 1rem;
+    padding: 1rem;
+    position: relative;
+    box-shadow: 5px 5px 10px #95A3A4;
+    background-color: #E2E8DD;
+}
+
+#crystals li:hover {
+    transform: translate3d(-1px, -1px, 0);
+}
+
+#crystals img {
+    height: 40%;
+}
+
