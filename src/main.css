@@ -19,3 +19,9 @@ h1 {
 .hidden {
     display: none;
 }
+
+button {
+    font-family: 'Dancing Script', cursive;
+    margin: 1rem;
+    background-color: #E2E8DD;
+}

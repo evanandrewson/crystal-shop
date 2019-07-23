@@ -1,0 +1,33 @@
+thead, tfoot {
+    background-color: #95A3A4;
+    font-size: 3rem;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #B7D1DA;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #E2E8DD;
+}
+
+table {
+    font-size:2rem;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 3rem;
+    border-collapse: collapse;
+}
+
+tr, th {
+    padding: .5rem;
+}
+
+.button {
+    text-align: center;
+}
+
+button {
+    height: 5rem;
+    font-size: 3rem;
+}

@@ -24,11 +24,6 @@
     height: 40%;
 }
 
-button {
-    font-family: 'Dancing Script', cursive;
-    margin: 1rem;
-}
-
 #filters {
     text-align: center;
 }
