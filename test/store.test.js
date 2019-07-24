@@ -1,4 +1,5 @@
 import store from '../src/data/store.js';
+import crystals from '../src/data/crystals.js';
 
 const test = QUnit.test;
 
@@ -19,7 +20,7 @@ test('store uses session storage', assert => {
     assert.equal(store.storage, window.sessionStorage);
 });
 
-test('save/get', assert => {
+test('save/get method for store', assert => {
     // arrange
     const testObject = {
         code: 'amethyst',
@@ -34,8 +35,19 @@ test('save/get', assert => {
 
     // act
     store.save(key, testObject);
-    const expected = store.get(key);
+    const retrieved = store.get(key);
     
     // assert
-    assert.deepEqual(testObject, expected);
+    assert.deepEqual(testObject, retrieved);
+});
+
+test('get products with bootstrapped default', assert => {
+    // arrange
+    // uses imported crystals array
+
+    // act
+    const result = store.getProducts();
+    
+    // assert
+    assert.deepEqual(crystals, result);
 });
