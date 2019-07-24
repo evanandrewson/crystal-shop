@@ -1,3 +1,5 @@
+import toUSD from './format.js';
+
 const renderCrystal = function(crystal) {
     const li = document.createElement('li');
     li.className = crystal.category;
@@ -16,7 +18,7 @@ const renderCrystal = function(crystal) {
     p.className = 'price';
     li.appendChild(p);
 
-    const priceInDollars = crystal.price.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+    const priceInDollars = toUSD(crystal.price);
     const priceNode = document.createTextNode(priceInDollars);
     p.appendChild(priceNode);
 
