@@ -8,8 +8,17 @@ export const findProduct = function(crystals, code) {
         if(crystal.code === code) {
             return crystal;
         }
-
-        return null;
     }
-    
+    return null;
+};
+
+export const getOrderTotal = function(cart, crystals) {
+    let orderTotal = 0;
+    for(let i = 0; i < cart.length; i++) {
+        const cartItem = cart[i];
+        const product = findProduct(crystals, cartItem.code);
+        const productLineTotal = getLineTotal(product.price, cartItem.quantity);
+        orderTotal += Number(productLineTotal);
+    }
+    return orderTotal;
 };

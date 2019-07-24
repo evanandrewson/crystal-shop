@@ -1,5 +1,6 @@
-import { getLineTotal, findProduct } from '../src/register.js';
+import { getLineTotal, findProduct, getOrderTotal } from '../src/register.js';
 import crystals from '../src/data/crystals.js';
+import cart from '../src/data/order.js';
 
 const test = QUnit.test;
 
@@ -42,4 +43,18 @@ test('find product', function(assert) {
 
     //Assert
     assert.deepEqual(result, expected);
+});
+
+test('get order total', function(assert) {
+    //Arrange
+    // Set up your parameters and expectations
+    const expected = 51;
+
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const result = getOrderTotal(cart, crystals);
+
+
+    //Assert
+    assert.equal(result, expected);
 });
