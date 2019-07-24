@@ -4,7 +4,6 @@ import { getLineTotal, findProduct } from './register.js';
 
 const renderLineItem = function(cartArrayItem) {
     const productObject = findProduct(crystals, cartArrayItem.code);
-    console.log(productObject);
     const tr = document.createElement('tr');
 
     const nameCell = document.createElement('td');

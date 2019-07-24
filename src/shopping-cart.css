@@ -19,8 +19,9 @@ table {
     border-collapse: collapse;
 }
 
-tr, th {
+tr, th, td {
     padding: .5rem;
+    margin: .5rem;
 }
 
 .button {
