@@ -1,4 +1,5 @@
-import { getLineTotal } from '../src/register.js';
+import { getLineTotal, findProduct } from '../src/register.js';
+import crystals from '../src/data/crystals.js';
 
 const test = QUnit.test;
 
@@ -18,4 +19,27 @@ test('get line total', function(assert) {
 
     //Assert
     assert.equal(result, expected);
+});
+
+test('find product', function(assert) {
+    //Arrange
+    // Set up your parameters and expectations
+    const toFindCode = 'amethyst';
+    const expected = {
+        code: 'amethyst',
+        name: 'Amethyst',
+        image: 'assets/amethyst.jpg',
+        description: 'purple and amazing',
+        category: 'quartz',
+        price: 5.00,
+        cost: 3.00
+    };
+
+    //Act 
+    // Call the function you're testing and set the result to a const
+    const result = findProduct(crystals, toFindCode);
+
+
+    //Assert
+    assert.deepEqual(result, expected);
 });
