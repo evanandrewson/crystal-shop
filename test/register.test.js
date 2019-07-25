@@ -1,4 +1,4 @@
-import { getLineTotal, findProduct, getOrderTotal } from '../src/register.js';
+import { getLineTotal, findByCode, getOrderTotal } from '../src/register.js';
 import crystals from '../src/data/crystals.js';
 import cart from '../src/data/order.js';
 
@@ -38,7 +38,7 @@ test('find product', function(assert) {
 
     //Act 
     // Call the function you're testing and set the result to a const
-    const result = findProduct(crystals, toFindCode);
+    const result = findByCode(crystals, toFindCode);
 
 
     //Assert

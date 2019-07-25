@@ -1,5 +1,5 @@
 import crystals from './crystals.js';
-import { findProduct } from '../register.js';
+import { findByCode } from '../register.js';
 
 const store = {
     storage: window.localStorage,
@@ -20,6 +20,11 @@ const store = {
         }
         return products;
     },
+    getProduct(code) {
+        const products = store.getProducts();
+        const product = findByCode(products, code);
+        return product;
+    },
     getShoppingCart() {
         let shoppingCart = store.get('shopping-cart');
         if(!shoppingCart) {
@@ -30,7 +35,7 @@ const store = {
     addToCart(code, quantity) {
         const shoppingCart = store.getShoppingCart();
 
-        let lineItem = findProduct(shoppingCart, code);
+        let lineItem = findByCode(shoppingCart, code);
         if(lineItem) {
             if(quantity) {
                 lineItem.quantity += quantity;

@@ -109,3 +109,15 @@ test('add product to cart with quantity', assert => {
     // assert
     assert.deepEqual(shoppingCart, expected);
 });
+
+test('get product by code', assert => {
+    //arrange
+    const code = 'amethyst';
+    const expected = crystals[0]
+    
+    // act
+    const result = store.getProduct(code);
+    
+    // assert
+    assert.deepEqual(result, expected);
+});
