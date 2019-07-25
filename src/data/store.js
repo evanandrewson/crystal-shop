@@ -2,14 +2,14 @@ import crystals from './crystals.js';
 
 const store = {
     storage: window.localStorage,
-    save(key, object) {
-        const json = JSON.stringify(object);
+    save(key, item) {
+        const json = JSON.stringify(item);
         store.storage.setItem(key, json); 
     },
     get(key) {
         const json = store.storage.getItem(key);
-        const object = JSON.parse(json);
-        return object;
+        const item = JSON.parse(json);
+        return item;
     },
     getProducts() {
         let products = store.get('products');
@@ -18,6 +18,13 @@ const store = {
             products = crystals;
         }
         return products;
+    },
+    getShoppingCart() {
+        let shoppingCart = store.get('shopping-cart');
+        if(!shoppingCart) {
+            shoppingCart = [];
+        }
+        return shoppingCart;
     }
 };
 

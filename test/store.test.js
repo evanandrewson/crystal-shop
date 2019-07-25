@@ -51,3 +51,14 @@ test('get products with bootstrapped default', assert => {
     // assert
     assert.deepEqual(crystals, result);
 });
+
+test('get shopping cart returns empty array when empty', assert => {
+    //arrange
+    const expected = [];
+    
+    // act
+    const shoppingCart = store.getShoppingCart();
+    
+    // assert
+    assert.deepEqual(shoppingCart, expected);
+});
