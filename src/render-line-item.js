@@ -1,9 +1,10 @@
 import toUSD from './format.js';
 import crystals from './data/crystals.js';
-import { getLineTotal, findByCode } from './register.js';
+import { getLineTotal } from './register.js';
+import store from './data/store.js';
 
 const renderLineItem = function(cartArrayItem) {
-    const productObject = findByCode(crystals, cartArrayItem.code);
+    const productObject = store.getProduct(cartArrayItem.code);
     const tr = document.createElement('tr');
 
     const nameCell = document.createElement('td');

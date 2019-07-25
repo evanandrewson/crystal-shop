@@ -1,4 +1,5 @@
 import toUSD from './format.js';
+import store from './data/store.js';
 
 const renderCrystal = function(crystal) {
     const li = document.createElement('li');
@@ -24,10 +25,12 @@ const renderCrystal = function(crystal) {
 
     const button = document.createElement('button');
     button.value = crystal.code;
-    li.appendChild(button);
-
     const buttonTextNode = document.createTextNode('Add');
+    button.addEventListener('click', () => {
+        store.addToCart(crystal.code);
+    });
     button.appendChild(buttonTextNode);
+    li.appendChild(button);
 
     return li;
 

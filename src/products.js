@@ -1,7 +1,8 @@
 import renderCrystal from './render-crystal.js';
-import crystals from './data/crystals.js';
+import store from './data/store.js';
 
 const crystalList = document.getElementById('crystals');
+const crystals = store.getProducts();
 
 for(let i = 0; i < crystals.length; i++) {
     const crystalListItem = renderCrystal(crystals[i]);
