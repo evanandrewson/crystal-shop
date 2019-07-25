@@ -113,7 +113,7 @@ test('add product to cart with quantity', assert => {
 test('get product by code', assert => {
     //arrange
     const code = 'amethyst';
-    const expected = crystals[0]
+    const expected = crystals[0];
     
     // act
     const result = store.getProduct(code);

@@ -1,5 +1,4 @@
 import toUSD from './format.js';
-import crystals from './data/crystals.js';
 import { getLineTotal } from './register.js';
 import store from './data/store.js';
 
