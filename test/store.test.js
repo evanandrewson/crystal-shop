@@ -62,3 +62,18 @@ test('get shopping cart returns empty array when empty', assert => {
     // assert
     assert.deepEqual(shoppingCart, expected);
 });
+
+test('add product to empty cart', assert => {
+    //arrange
+    const expected = [{
+        code: 'labradorite',
+        quantity: 1
+    }];
+    
+    // act
+    store.addToCart('labradorite');
+    const shoppingCart = store.getShoppingCart();
+    
+    // assert
+    assert.deepEqual(shoppingCart, expected);
+});

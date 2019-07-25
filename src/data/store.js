@@ -25,6 +25,15 @@ const store = {
             shoppingCart = [];
         }
         return shoppingCart;
+    },
+    addToCart(code) {
+        const shoppingCart = store.getShoppingCart();
+        const newLineItem = {
+            code: code,
+            quantity: 1
+        };
+        shoppingCart.push(newLineItem);
+        store.save('shopping-cart', shoppingCart);
     }
 };
 
