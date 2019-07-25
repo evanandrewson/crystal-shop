@@ -27,18 +27,31 @@ const store = {
         }
         return shoppingCart;
     },
-    addToCart(code) {
+    addToCart(code, quantity) {
         const shoppingCart = store.getShoppingCart();
 
         let lineItem = findProduct(shoppingCart, code);
         if(lineItem) {
-            lineItem.quantity++;
+            if(quantity) {
+                lineItem.quantity += quantity;
+            } else {
+                lineItem.quantity++;
+            }
+            
         } else {
-            lineItem = {
-                code: code,
-                quantity: 1
-            };
-            shoppingCart.push(lineItem);
+            if(quantity) {
+                lineItem = {
+                    code: code,
+                    quantity: quantity
+                };
+                shoppingCart.push(lineItem);
+            } else {
+                lineItem = {
+                    code: code,
+                    quantity: 1
+                };
+                shoppingCart.push(lineItem);
+            }
         }
         
         store.save('shopping-cart', shoppingCart);

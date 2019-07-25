@@ -93,3 +93,19 @@ test('add product already in cart', assert => {
     // assert
     assert.deepEqual(shoppingCart, expected);
 });
+
+test('add product to cart with quantity', assert => {
+    //arrange
+    const quantity = 4;
+    const expected = [{
+        code: 'labradorite',
+        quantity: 4
+    }];
+    
+    // act
+    store.addToCart('labradorite', quantity);
+    const shoppingCart = store.getShoppingCart();
+    
+    // assert
+    assert.deepEqual(shoppingCart, expected);
+});
