@@ -1,4 +1,5 @@
 import crystals from './crystals.js';
+import { findProduct } from '../register.js';
 
 const store = {
     storage: window.localStorage,
@@ -28,11 +29,18 @@ const store = {
     },
     addToCart(code) {
         const shoppingCart = store.getShoppingCart();
-        const newLineItem = {
-            code: code,
-            quantity: 1
-        };
-        shoppingCart.push(newLineItem);
+
+        let lineItem = findProduct(shoppingCart, code);
+        if(lineItem) {
+            lineItem.quantity++;
+        } else {
+            lineItem = {
+                code: code,
+                quantity: 1
+            };
+            shoppingCart.push(lineItem);
+        }
+        
         store.save('shopping-cart', shoppingCart);
     }
 };
