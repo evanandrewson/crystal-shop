@@ -13,7 +13,7 @@ form.addEventListener('submit', (event) => {
         category: formData.get('category'),
         price: +formData.get('price'),
         cost: +formData.get('cost')
-    }
+    };
     store.addProduct(newProduct);
     alert('product saved');
     form.reset();
