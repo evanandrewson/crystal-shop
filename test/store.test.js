@@ -121,3 +121,23 @@ test('get product by code', assert => {
     // assert
     assert.deepEqual(result, expected);
 });
+
+test('add product', assert => {
+    //arrange
+    const newProduct = {
+        code: 'fluorite',
+        name: 'Fluorite',
+        image: 'assets/fluorite.jpg',
+        description: 'multicolored and shiny',
+        category: 'mineral',
+        price: 6.00,
+        cost: 3.00
+    };
+
+    //act
+    store.addProduct(newProduct);
+    const crystals = store.getProducts();
+
+    //assert
+    assert.deepEqual(crystals[crystals.length - 1], newProduct);
+});
