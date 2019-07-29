@@ -28,6 +28,7 @@ const renderCrystal = function(crystal) {
     const buttonTextNode = document.createTextNode('Add');
     button.addEventListener('click', () => {
         store.addToCart(crystal.code);
+        store.placeOrder(crystal.code);
     });
     button.appendChild(buttonTextNode);
     li.appendChild(button);

@@ -1,3 +1,5 @@
+
+
 export const getLineTotal = function(price, quantity) {
     return Number(price * quantity).toFixed(2);
 };
