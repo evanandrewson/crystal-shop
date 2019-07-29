@@ -141,3 +141,61 @@ test('add product', assert => {
     //assert
     assert.deepEqual(crystals[crystals.length - 1], newProduct);
 });
+
+test('get sales returns empty array when empty', assert => {
+    //arrange
+    const expected = [];
+
+    //act
+    const sales = store.getSales();
+
+    //assert
+    assert.deepEqual(sales, expected);
+});
+
+test('add product to empty sales report array', assert => {
+    //arrange
+    const expected = [{
+        code: 'labradorite',
+        quantity: 1
+    }];
+    
+    // act
+    store.placeOrder('labradorite');
+    const sales = store.getSales();
+    
+    // assert
+    assert.deepEqual(sales, expected);
+});
+
+test('add product already in sales report array', assert => {
+    //arrange
+    const expected = [{
+        code: 'labradorite',
+        quantity: 2
+    }];
+    
+    // act
+    store.placeOrder('labradorite');
+    store.placeOrder('labradorite');
+    const sales = store.getSales();
+    
+    // assert
+    assert.deepEqual(sales, expected);
+});
+
+test('add product to sales report with quantity', assert => {
+    //arrange
+    const quantity = 4;
+    const expected = [{
+        code: 'labradorite',
+        quantity: 4
+    }];
+    
+    // act
+    store.placeOrder('labradorite', quantity);
+    const sales = store.getSales();
+    
+    // assert
+    assert.deepEqual(sales, expected);
+});

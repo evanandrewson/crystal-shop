@@ -37,35 +37,55 @@ const store = {
         }
         return shoppingCart;
     },
+    getSales() {
+        let sales = store.get('sales');
+        if(!sales) {
+            sales = [];
+        }
+        return sales;
+    },
     addToCart(code, quantity) {
         const shoppingCart = store.getShoppingCart();
 
-        let lineItem = findByCode(shoppingCart, code);
-        if(lineItem) {
-            if(quantity) {
-                lineItem.quantity += quantity;
-            } else {
-                lineItem.quantity++;
-            }
-            
-        } else {
-            if(quantity) {
-                lineItem = {
-                    code: code,
-                    quantity: quantity
-                };
-                shoppingCart.push(lineItem);
-            } else {
-                lineItem = {
-                    code: code,
-                    quantity: 1
-                };
-                shoppingCart.push(lineItem);
-            }
-        }
+        addLineItem(shoppingCart, code, quantity);
         
         store.save('shopping-cart', shoppingCart);
+    },
+    placeOrder(code, quantity) {
+        const sales = store.getSales();
+
+        addLineItem(sales, code, quantity);
+        
+        store.save('sales', sales);
     }
 };
 
 export default store;
+
+function addLineItem(dataArray, code, quantity) {
+    let lineItem = findByCode(dataArray, code);
+    if(lineItem) {
+        if(quantity) {
+            lineItem.quantity += quantity;
+        }
+        else {
+            lineItem.quantity++;
+        }
+    }
+    else {
+        if(quantity) {
+            lineItem = {
+                code: code,
+                quantity: quantity
+            };
+            dataArray.push(lineItem);
+        }
+        else {
+            lineItem = {
+                code: code,
+                quantity: 1
+            };
+            dataArray.push(lineItem);
+        }
+    }
+}
