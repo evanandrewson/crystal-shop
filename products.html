@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Crystal shop</title>
+    <link rel="stylesheet" href="src/products.css">
+    <link rel="stylesheet" href="src/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Welcome to the crystal shop!</h1>
+        <nav>
+            <a href="./index.html">Welcome page</a>
+            <a href="./products.html">Crystal shop</a>
+            <a href="./shopping-cart.html">Shopping cart</a>
+            <a href="./product-entry.html">Product Entry</a>
+            <a href="./sales.html">Sales Report</a>
+        </nav>
+    </header>
+    <main>
+        <section id='filters'>
+            <button id="quartz-button" value="quartz">Show quartz crystals</button>
+            <button id="feldspar-button" value="feldspar">Show feldspar crystals</button>
+            <button id="metamorphic-button" value="metamorphic">Show metamorphic crystals</button>
+            <button id="mineral-button" value="mineral">Show minerals</button>
+            <button id="show-all-button" value="all">Show all</button>
+        </section>
+        <ul id="crystals"></ul>
+    </main>
+    <script src="src/products.js" type="module"></script>
+</body>
+</html>

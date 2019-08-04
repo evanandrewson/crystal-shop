@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Product Entry</title>
+    <link rel="stylesheet" href="./src/main.css">
+    <link rel="stylesheet" href="./src/product-entry.css">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Product Entry</h1>
+        <nav>
+            <a href='./index.html'>Welcome page</a>
+            <a href='./products.html'>Crystal shop</a>
+            <a href="./shopping-cart.html">Shopping cart</a>
+            <a href="./product-entry.html">Product Entry</a>
+            <a href="./sales.html">Sales Report</a>
+        </nav>
+    </header>
+    <form id="product-entry">
+        <p>
+            <label for="code"> Code:
+                <input type="text" name="code" value="code" id="code" required></label>
+            </label>
+        </p>
+        <p>
+            <label for="name"> Name:
+                <input type="text" name="name" value="name" id="name" required></label>
+            </label>
+        </p>
+        <p>   
+            <label for="image"> Image location:
+                <input type="text" name="image" value="image" id="image" required></label>
+            </label>
+        </p>
+        <p>  
+            <label for="description"> Description: 
+                <input type="textarea" name="description" value="description" id="description" required></label>
+            </label>
+        </p>
+        <p>   
+            <label for="category"> Category:
+                <input type="text" name="category" value="category" id="category" required></label>
+            </label>
+        </p>
+        <p>   
+            <label for="price"> Price:
+                <input type="number" name="price" value="price" id="price" step=.01 required></label>
+            </label>
+        </p>
+        <p>   
+            <label for="cost"> Cost:
+                <input type="number" name="cost" value="cost" id="cost" step=.01 required></label>
+            </label>
+        </p>
+        <input type="submit" name="submit" id="submit">
+    </form>
+    <script src="./src/product-entry.js" type="module"></script>
+</body>
+</html>
